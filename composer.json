@@ -21,7 +21,7 @@
     ],
     "require": {
         "php": "^8.2.0",
-        "psr/container": "2.0.2",
+        "psr/container": "^1.0.0 || ^2.0.0",
         "composer/composer": "^2.5",
         "symfony/filesystem": "^6.2",
         "twilio/sdk": "^7.2"
