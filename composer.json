@@ -1,0 +1,63 @@
+{
+    "name": "settermjd/laminas-twilio-integration",
+    "description": "A small package to simplify integrating Twilio into a Laminas or Mezzio project",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "autoload": {
+        "psr-4": {
+            "Laminas\\Twilio\\": "src/App/src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LaminasTest\\Twilio\\": "test/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Matthew Setter",
+            "email": "matthew@matthewsetter.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2.0",
+        "psr/container": "2.0.2",
+        "composer/composer": "^2.5",
+        "symfony/filesystem": "^6.2",
+        "twilio/sdk": "^7.2"
+    },
+    "require-dev": {
+        "laminas/laminas-coding-standard": "^2.5",
+        "squizlabs/php_codesniffer": "^3.7",
+        "vimeo/psalm": "^5.9",
+        "psalm/plugin-phpunit": "^0.18.4",
+        "phpunit/phpunit": "^10.1",
+        "fakerphp/faker": "^1.21",
+        "mikey179/vfsstream": "^1.6"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "scripts": {
+        "check": [
+            "@cs-check",
+            "@test"
+        ],
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf",
+        "static-analysis": "psalm --shepherd --stats",
+        "test": "phpunit --colors=always",
+        "test-coverage": "phpunit --colors=always --coverage-clover clover.xml"
+    },
+    "support": {
+        "docs": "https://github.com/settermjd/laminas-twilio-integration/docs",
+        "issues": "https://github.com/settermjd/laminas-twilio-integration/issues"
+    },
+    "extra": {
+        "laminas": {
+            "config-provider": "Laminas\\Twilio\\ConfigProvider"
+        }
+    }
+}
